@@ -1,0 +1,10 @@
+<%= form_for @category do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :category_id %>
+  <%= f.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %>
+  <br>
+  <%= f.submit 'New' %>
+  <% end %>

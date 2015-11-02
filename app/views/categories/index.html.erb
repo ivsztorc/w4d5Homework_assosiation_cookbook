@@ -1,0 +1,23 @@
+<table>
+<h1>Categories List</h1>
+<tr>
+<th>Name</th>
+<th>Show</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+<% @categories.each do |category| %>
+<tr> 
+<td><%= category.name %></td>
+<td> <%= "#{category.name}" %></td>
+<td><%= link_to("Show #{category.name}", category_path(category)) %></td>
+<td><%= link_to('Edit category', edit_category_path(category)) %></td>
+<td><%= button_to('Delete category', category_path(category), method: :delete, data:{confirm: 'Delete them? Are you sure?'}) %></td>
+</tr>
+<% end %>
+</table>
+
+<br>
+
+
+<%#= link_to 'New Category', new_category_path %>
